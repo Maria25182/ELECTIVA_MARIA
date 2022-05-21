@@ -1,11 +1,12 @@
 import LayoutAdmin from "../layouts/LayoutAdmin";
 import LayoutBasic from "../layouts/LayoutBasic";
+import LayoutGuess from "../layouts/LayoutGuess";
 import AdminHome from "../pages/Admin";
 import AdminSignIn from "../pages/Admin/SignIn";
 import Home from "../pages/home";
 import Contact from "../pages/contact";
 import NotFound from "../pages/NotFound";
-import Guess from "../pages/guess";
+import guess from "../pages/guess";
 
 const routesAdmin = [
   {
@@ -20,8 +21,8 @@ const routesAdmin = [
   },
   {
     path: "/guess",
-    layout: LayoutAdmin,
-    component: Guess,
+    layout: LayoutGuess,
+    component: guess,
   },
 ];
 
