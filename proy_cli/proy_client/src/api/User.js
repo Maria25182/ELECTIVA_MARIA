@@ -1,4 +1,4 @@
-import { basePath, apiVersion } from "./Config";
+import { basePath} from "./Config";
 
 export function signUpApi(data) {
   const url = `${basePath}/signup`;
