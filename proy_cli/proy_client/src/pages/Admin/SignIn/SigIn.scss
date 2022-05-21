@@ -6,7 +6,23 @@
   background-position: center center;
   background-size: cover;
 
+
+
+
+  &__git{
+    height: 150px;
+    background-color: black;
+  }
+
+  
+  &__gitt{
+    align-items: center;
+    color:aliceblue
+  }
   &__content {
+
+
+
     background: currentColor;
     display: flex;
     flex-direction: column;

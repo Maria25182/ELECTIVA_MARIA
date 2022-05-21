@@ -1,12 +1,13 @@
 import React from "react";
-import { Layout, Tabs } from "antd";
+import { Layout, Tabs, Button } from "antd";
 import Login from "../../../components/AdminComponents/Login";
 import Register from "../../../components/AdminComponents/Register";
 import Logo from "../../../assets/img/png/logo.png";
 import "./SigIn.scss";
+import { GithubOutlined } from "@ant-design/icons";
 
 export default function SignIn() {
-  const { Content } = Layout;
+  const { Content, Footer } = Layout;
   const { TabPane } = Tabs;
   return (
     <Layout className="sign-in">
@@ -25,6 +26,16 @@ export default function SignIn() {
           </Tabs>
         </div>
       </Content>
+      <Footer className="sign-in__git">
+        <Button className="sign-in__gitt"
+          type="link"
+          onClick={() => console.log("Github")}
+          href="https://github.com/Maria25182"
+        >
+          <GithubOutlined style={{ fontSize: "80px" }} /> 
+          Maria Cardona
+        </Button>
+      </Footer>
     </Layout>
   );
 }
