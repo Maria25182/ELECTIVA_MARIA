@@ -1,23 +1,19 @@
 const mongoose = require("mongoose");
 const app = require("./app");
-const PORT_SERVER = process.env.PORT || 6000
+const port = process.env.PORT || 5000;
 const { API_VERSION, IP_SERVER, PORT_DB } = require("./config");
 
-mongoose.connect(
-    "mongodb://0.0.0.0:27017/",
-  /* mongodb:// ${IP_SERVER}:${PORT_DB}/proyecto_db`,*/
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  (err, res) => {
-    if (err) {
-      throw err;
-    } else {
-      console.log("success connection to db");
-      app.listen(PORT_SERVER, () => {
-        console.log("##############");
-        console.log("#######API-REDS#######");
-        console.log("##############");
-        console.log(`https:// ${IP_SERVER}:${PORT_SERVER}/api/${API_VERSION}/`);
-      });
-    }
+mongoose.connect(`mongodb://${IP_SERVER}:${PORT_DB}/project_db`, (err, res) => {
+  if (err) {
+    throw err;
+  } else {
+    console.log("La conexion a la base de datos es correcta.");
+
+    app.listen(port, () => {
+      console.log("######################");
+      console.log("###### API REST ######");
+      console.log("######################");
+      console.log(`http://${IP_SERVER}:${port}/api/${API_VERSION}/`);
+    });
   }
-);
+});
